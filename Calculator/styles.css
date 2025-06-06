@@ -1,0 +1,63 @@
+*,*::before,*::after{
+    box-sizing: border-box;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight:normal;
+}
+body{
+    padding: 0;
+    margin: 0;
+    background:linear-gradient(to top,#00AAFF,#00FF6C);
+    /*linear-gradient creates a gradient with the given colours and start*/
+}
+.calc-grid{
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    min-height: 100vh;
+    /*vh=view height*/
+    grid-template-columns: repeat(4,100px);
+    grid-template-rows: minmax(120px,auto)repeat(5,100px);
+    /*minmax is used to set the dist from top and bottom*/
+    /*repeat is used to set each ele position in the calc*/
+}
+.calc-grid>button{
+    cursor:pointer;
+    /*used to change arroe to hand in website*/
+    font-size: 2rem;
+    border: 1px solid white;
+    outline:none;
+    background-color: rgba(255,255,255,.75);
+}
+.calc-grid>button:hover{
+    background-color: rgba(255,255,255,.9);
+    /*to change colour of button when hovered*/
+}
+.fill-two{
+    grid-column:span 2;
+}
+.output{
+    grid-column:1 / -1;
+    /*this is used to span the output to the whole column*/
+    background-color: rgba(0,0,0,.75);
+    display:flex;
+    align-items:flex-end;
+    /*it is used to move the values to the bottom left end of the output*/
+    justify-content: space-around;
+    /* to provide space above and below the words*/
+    flex-direction: column;
+    /*to display the above on the right side*/
+    padding:10px;
+    word-wrap:break-word;
+    /*if needed to break input word in between irrespective of spaces*/
+    word-break: break-all;
+    /*if needed to wrap to next line if current line is full*/
+}
+.prev-operand{
+    color:rgba(255,255,255,.75);
+    font-size:1.5rem;
+}
+.curr-operand{
+    color:white;
+    font-size:2.5rem;
+}
+
